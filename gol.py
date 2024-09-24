@@ -8,20 +8,11 @@ class Game:
         self.SCREEN_WIDTH = 500
         self.SCREEN_HEIGHT = 400
         self.TILE_SIZE = 20
-
         self.running = False
 
         pygame.display.set_caption("Conway's Game of Life")
         self.screen = pygame.display.set_mode((self.SCREEN_WIDTH, self.SCREEN_HEIGHT))
-        
         self.clock = pygame.time.Clock()
-
-        '''
-        HOLY SHIT PYTHON ARRAYS ARE SO FUCKING BADDDDDDDDD
-        DEADASS
-        EVERY PROBLEM I HAD
-        WAS WITH FUCKING ARRAYYYYSSS
-        '''
 
         self.array1 = np.array([[0 for i in range(int(self.SCREEN_WIDTH/self.TILE_SIZE))] for j in range(int(self.SCREEN_HEIGHT/self.TILE_SIZE))])
         self.array2 = np.array([[0 for i in range(int(self.SCREEN_WIDTH/self.TILE_SIZE))] for j in range(int(self.SCREEN_HEIGHT/self.TILE_SIZE))])
@@ -88,15 +79,13 @@ class Game:
         sum = 0
         
         #search 3x3
-        for i in range(-1,2): #-1 kay mo back og one, and 2 kay exclusive
+        for i in range(-1,2): #-1 cuz back by one and 2 cuz exclusiove
             for j in range(-1, 2):
                 '''
-                balihon siya kay idk what the fawk is happening.
                 if coord+i or coord+j is out of range
                 Set i or j into n-1 (size of array)
                 it is set to either negative or positive depending on which direction
-                up, left(negative)
-                down, right(positive)
+                im not even really sure
                 '''
                 if y+i > len(array)-1:
                     i = -len(array)+1
